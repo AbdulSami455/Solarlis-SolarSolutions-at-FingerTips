@@ -11,6 +11,7 @@ def list_bucket():
             print('Buckets exists..')
             for bucket in response['Buckets']:
                 print(f'  {bucket["Name"]}')
+
     except Exception as e:
         logging.error(e)
         return False
