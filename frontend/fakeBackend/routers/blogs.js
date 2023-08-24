@@ -6,9 +6,9 @@ router.post("/postblogs",
 async (req, res) => {
     
     try {
-        const {blogsCompany,blogsSvg,blogsParagraph,blogsLinkedIn} = req.body;
+        const {Company,Svg,Paragraph,LinkedIn} = req.body;
 
-        const newBlog = new Blogs({blogsCompany: blogsCompany, blogsSvg: blogsSvg, blogsParagraph: blogsParagraph, blogsLinkedIn: blogsLinkedIn});
+        const newBlog = new Blogs({Company: Company, Svg: Svg, Paragraph: Paragraph, LinkedIn: LinkedIn});
         await newBlog.save();
         res.status(200).json("blogs is registered Successfully");
         
@@ -26,7 +26,7 @@ async (req, res) => {
         let response = await Blogs.find();
         res.status(200).json(response);
         
-    }catch (err) {
+    }catch (err) {plans
         res.status(500).json({ errors: err})
       } 
 })
