@@ -1,0 +1,12 @@
+.btnNav{
+    width: "4rem";
+    text-align: "center";
+    border: '1px solid yellow';
+    border-radius: 20px;
+    background: "yellow";
+    margin-left: "12rem";
+    margin-right: "12rem";
+    color: "black";
+    font-size: "15px";
+    font-weight:"bold",
+  }

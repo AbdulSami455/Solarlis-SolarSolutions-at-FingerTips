@@ -2,16 +2,16 @@ const mongoose = require('mongoose');
 const { Schema } = require('mongoose');
 
 const productsSchema = new Schema({
-    productsCompany:{
+    Company:{
         type: String,
     },
-    productsSvg:{
+    Svg:{
        type: String,
     },
-    productsParagraph:{
+    Paragraph:{
         type: String,
     },
-    productsLinkedIn : {
+    LinkedIn : {
         type : String,
     }
 })

@@ -1,0 +1,84 @@
+import React, { useContext, useEffect, useState } from "react";
+import HomeContext from "../../contextApi/HomePage/HomeContext";
+import PlansCards from "./PlansCards";
+import Loader from "./Loader";
+
+function Plans() {
+  let context = useContext(HomeContext);
+  const { Plans, fetchPlans, PlanLen } = context;
+  
+  const [start, setStart] = useState(0);
+  const [End, setEnd] = useState(3);
+  const [loading, setloading] = useState(false)
+
+  useEffect(() => {
+    fetchPlans();
+  }, []);
+
+   console.log(PlanLen);
+  
+
+  const svg1 = () => {
+    let subStart = start - 3;
+    setStart(subStart);
+    let subEnd = End - 3;
+    setEnd(subEnd);
+    setloading(true);
+  };
+
+  const svg2 = () => {
+    let sumStart = start + 3;
+    setStart(sumStart);
+    let sumEnd = End + 3;
+    setEnd(sumEnd);
+    setloading(true);
+  };
+
+  return (
+    <div>
+      
+        <div className="container bg-color-gray">
+        <h2>Plans</h2>
+        <div className="d-flex justify-content-around">
+         <svg
+            onClick={svg1}
+            className="svgHome"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+            style={{
+              height: "40px",
+              visibility: start === 0 ? "hidden" : "visible",
+            }}
+          >
+            <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+          </svg>
+          {Plans&&
+            Plans.slice(start, End).map((Plan, index) => {
+              return (
+                <div className="row cols-md-3">
+                  <div key={index}>
+                    <PlansCards Plan={Plan} />
+                  </div>
+                </div>
+              );
+            })}
+          <svg
+            onClick={svg2}
+            className="svgHome"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+            style={{
+                height: "40px",
+                visibility: End >= PlanLen ? "hidden" : "visible",
+              }}
+          >
+            <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+          </svg>
+        </div> 
+        <button className="btnNav">Click</button>
+      </div>
+    </div>
+  );
+}
+
+export default Plans;
