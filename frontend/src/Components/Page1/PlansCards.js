@@ -2,15 +2,16 @@ import React from 'react'
 
 function PlansCards(props) {
     const Plan = props.Plan;
+    
   return (
-    <div><div class="card">
+    <div class="card">
+    <a style={{textDecoration:"none"}} target='_blank' href={Plan.LinkedIn} class="btnCard">
     <img src={Plan.Svg} class="card-img-top" alt="..." />
     <div class="card-body">
-      <h5 class="card-title">{Plan.Company}</h5>
-      <p class="card-text">{Plan.Paragraph}.</p>
-      <a href="/" class="btn btn-primary">{Plan.LinkedIn}</a>
-    </div>
-  </div></div>
+      <h4 >{Plan.Company}</h4>
+      </div>
+      </a>
+  </div>
   )
 }
 
