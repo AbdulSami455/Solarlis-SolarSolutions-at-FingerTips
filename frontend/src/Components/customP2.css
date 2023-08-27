@@ -1,0 +1,32 @@
+.boxPage2{
+    border-radius: 2rem;
+    background:  rgb(59, 60, 54);
+    margin-top: 2rem;
+    position: relative;
+  }
+  .boxPage2 h2{
+    color:yellow;
+    font-weight: bold;
+    font-size: 3rem;
+  }
+
+  .boxCardP2{
+    background:  rgb(59, 60, 54) ;
+  }
+
+  .btnCardP2{
+    background-color:  rgb(59, 60, 54);
+  }
+
+
+  .btnCardP2 h4{
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    
+  }
+
+  .btnCardP2:hover{
+    box-shadow: 0px 0px 12px yellow;
+  }

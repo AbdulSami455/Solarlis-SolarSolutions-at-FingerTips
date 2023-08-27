@@ -5,12 +5,14 @@ function PlansCards(props) {
     
   return (
     <div class="card">
-    <a style={{textDecoration:"none"}} target='_blank' href={Plan.LinkedIn} class="btnCard">
+    <button onClick={()=>console.log(Plan._id)} style={{textDecoration:"none"}} class="btnCard">
+    <div className='d-flex justify-content-center'>
     <img src={Plan.Svg} class="card-img-top" alt="..." />
+    </div>
     <div class="card-body">
       <h4 >{Plan.Company}</h4>
       </div>
-      </a>
+      </button>
   </div>
   )
 }

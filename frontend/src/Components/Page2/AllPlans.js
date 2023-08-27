@@ -31,7 +31,7 @@ function AllPlans() {
             {Plans&&
               Plans.map((Plan, index) => {
                 return (
-                    <div className="col-sm-4 my-3"  key={index}>
+                    <div className="col-sm-4 my-5"  key={index}>
                     
                     <AllPlansCards Plan={Plan} />
                     </div>
