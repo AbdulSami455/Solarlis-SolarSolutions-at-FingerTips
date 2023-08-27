@@ -1,25 +1,25 @@
-import mysql.connector
+# main.py
 
+import mysql.connector
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Access environment variables
+DB_HOST = os.getenv("DB_HOST")
+DB_USER = os.getenv("DB_USER")
+DB_PASSWORD = os.getenv("DB_PASSWORD")
+DB_NAME = os.getenv("DB_NAME")
+
+# Establish a connection to the database
 mydb = mysql.connector.connect(
-  host="solarproject.cwnzxgpfmkwu.eu-north-1.rds.amazonaws.com",
-  user="admin",
-  password="sami1234",
-database="solarlis"
+    host=DB_HOST,
+    user=DB_USER,
+    password=DB_PASSWORD,
+    database=DB_NAME
 )
 
-# Create a cursor object to interact with the database
-cursor = mydb.cursor()
-
-# Execute the SQL query to fetch table names
-cursor.execute("SHOW TABLES")
-
-# Fetch all the rows (table names)
-table_names = cursor.fetchall()
-
-# Print the table names
-for table in table_names:
-    print(table[0])
-
-# Close the cursor and the database connection
-cursor.close()
-mydb.close()
+# Rest of your code here
+print(mydb)
