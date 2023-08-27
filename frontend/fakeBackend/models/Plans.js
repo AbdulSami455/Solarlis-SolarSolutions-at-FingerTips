@@ -2,16 +2,16 @@ const mongoose = require('mongoose');
 const { Schema } = require('mongoose');
 
 const plansschema = new Schema({
-    plansCompany:{
+    Company:{
         type: String,
     },
-    plansSvg:{
+    Svg:{
        type: String,
     },
-    plansParagraph:{
+    Paragraph:{
         type: String,
     },
-    plansLinkedIn:{
+    LinkedIn:{
         type: String,
     }
 })

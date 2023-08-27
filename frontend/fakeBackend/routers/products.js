@@ -6,9 +6,9 @@ router.post("/postproducts",
 async (req, res) => {
     
     try {
-        const {productsCompany,productsSvg,productsParagraph,productsLinkedIn} = req.body;
+        const {Company,Svg,Paragraph,LinkedIn} = req.body;
 
-        const newproducts = new Products({productsCompany: productsCompany, productsSvg: productsSvg, productsParagraph: productsParagraph, productsLinkedIn: productsLinkedIn});
+        const newproducts = new Products({Company: Company, Svg: Svg, Paragraph: Paragraph, LinkedIn: LinkedIn});
         await newproducts.save();
         res.status(200).json("products is registered Successfully");
         

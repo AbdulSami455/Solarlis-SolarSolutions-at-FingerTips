@@ -8,11 +8,12 @@ router.post("/postplans",
 async (req, res) => {
     
     try {
-        const {plansCompany,plansSvg,plansParagraph,plansLinkedIn} = req.body;
+        const {Company,Svg,Paragraph,LinkedIn} = req.body;
 
-        const newplans = new Plans({plansCompany: plansCompany, plansSvg: plansSvg, plansParagraph: plansParagraph,plansLinkedIn: plansLinkedIn});
+        const newplans = new Plans({Company: Company, Svg: Svg, Paragraph: Paragraph, LinkedIn: LinkedIn});
         await newplans.save();
         res.status(200).json("plans is registered Successfully");
+        console.log(newplans);
         
     } catch (err) {
       res.status(500).json({ errors: err})

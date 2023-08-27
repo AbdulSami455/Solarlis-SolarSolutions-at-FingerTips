@@ -1,0 +1,32 @@
+.btnNav{
+    width: 6rem;
+    height: 40px;
+    text-align: center;
+    border: 1px solid yellow;
+    border-radius: 20px;
+    background: yellow;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    color: black;
+    font-size: 17px;
+    font-weight:bold;
+    text-decoration: none;
+    transition: 0.5s ease;
+  }
+  .btnNav:hover{
+    box-shadow: 0 0 25px rgb(255, 255, 0);
+  }
+
+  .svgHome{
+    width: 5rem;
+    margin-top: 45px;
+    margin-bottom: 2rem;
+    fill:#f2f207;
+    transition: 0.5s ease;
+  }
+  .svgHome:hover{
+    border-radius: 100%;
+    background: yellow;
+    fill:black;
+    box-shadow: 0 0 25px rgb(255, 255, 0);
+  }
