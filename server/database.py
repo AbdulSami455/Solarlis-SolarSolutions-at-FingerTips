@@ -24,5 +24,5 @@ mydb = mysql.connector.connect(
 
 cursor = mydb.cursor()
 
-# Rest of your code here
+
 print(mydb)
