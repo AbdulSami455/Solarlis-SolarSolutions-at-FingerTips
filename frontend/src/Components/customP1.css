@@ -1,0 +1,129 @@
+.btnNav{
+    width: 6rem;
+    height: 40px;
+    text-align: center;
+    border: 1px solid yellow;
+    border-radius: 20px;
+    background: yellow;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    color: black;
+    font-size: 17px;
+    font-weight:bold;
+    text-decoration: none;
+    transition: 0.5s ease;
+  }
+  .btnNav:hover{
+    box-shadow: 0 0 25px rgb(255, 255, 0);
+  }
+
+  .svgHome{
+    width: 5rem;
+    margin-top: 45px;
+    margin-bottom: 2rem;
+    fill:#f2f207;
+    transition: 0.5s ease;
+  }
+  .svgHome:hover{
+    border-radius: 100%;
+    background: yellow;
+    fill:black;
+    box-shadow: 0 0 25px rgb(255, 255, 0);
+  }
+
+  .boxPage1{
+    border-radius: 2rem;
+    background: rgb(59, 60, 54);
+    margin-top: 2rem;
+    position: relative;
+    height: 23rem;
+  }
+  .boxPage1 h2{
+    color:yellow;
+    font-weight: bold;
+    font-size: 3rem;
+  }
+
+  .read.btnNav{
+    position: absolute;
+    top: 80%;
+    margin-top: 1rem;
+  }
+
+  .boxCardP1{
+    background:rgb(59, 60, 54)
+  }
+
+  .btnCard{
+    all: initial;
+  }
+
+  .btnCard{
+    width: 15rem;
+    height: 12rem;
+    background: rgb(59, 60, 54);
+  }
+
+  .btnCard img{
+    width: 15rem;
+    height: 8rem;
+  }
+
+  .btnCard h4{
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    
+  }
+
+  .btnCard:hover{
+    box-shadow: 0px 0px 10px 2px #ffff00;
+  }
+
+  .boxPage2{
+    border-radius: 2rem;
+    background:  rgb(59, 60, 54);
+    margin-top: 10rem;
+    position: relative;
+  }
+  .boxPage2 h2{
+    color:yellow;
+    font-weight: bold;
+    font-size: 3rem;
+  }
+
+  .btnCardP2{
+    all: initial;
+  }
+
+  .boxCardP2{
+    background:  rgb(59, 60, 54) ;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .btnCardP2{
+    background-color:  rgb(59, 60, 54);
+  }
+
+
+  .btnCardP2 h4{
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    
+  }
+
+  .btnCardP2 p{
+    color: white;
+    font-size: .9rem;
+    font-weight: 510;
+    
+  }
+
+  .btnCardP2:hover{
+    box-shadow: 0px 0px 12px 5px #ffff00;
+    border-radius: 20px;
+  }

@@ -1,5 +1,5 @@
 import React from "react";
-import "./custom.css";
+import "../../Components/customP1.css";
 
 function Navbar() {
   return (

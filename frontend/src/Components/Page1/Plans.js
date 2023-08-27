@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
+import {useNavigate} from "react-router-dom"
 import HomeContext from "../../contextApi/HomePage/HomeContext";
 import PlansCards from "./PlansCards";
-import Loader from "./Loader";
+import Loader from "../Loader";
 
 function Plans() {
+  let navigate = useNavigate()
   let context = useContext(HomeContext);
   const { Plans, fetchPlans, PlanLen } = context;
   
@@ -16,6 +18,11 @@ function Plans() {
   }, []);
 
    console.log(PlanLen);
+
+   useEffect(() => {
+    setTimeout(() => setloading(false),700)
+   }, [loading])
+   
   
 
   const svg1 = () => {
@@ -37,9 +44,10 @@ function Plans() {
   return (
     <div>
       
-        <div className="container bg-color-gray">
-        <h2>Plans</h2>
-        <div className="d-flex justify-content-around">
+     <div className="container boxPage1">
+        <h2 className="text-center my-4">Plans</h2>
+        {!loading? <div className="d-flex justify-content-around">
+        <div className="row boxCardP1">
          <svg
             onClick={svg1}
             className="svgHome"
@@ -55,27 +63,31 @@ function Plans() {
           {Plans&&
             Plans.slice(start, End).map((Plan, index) => {
               return (
-                <div className="row cols-md-3">
-                  <div key={index}>
+                <div className="col-sm-3 mx-3" key={index}>
+                  
                     <PlansCards Plan={Plan} />
                   </div>
+                  
+                  );
+                })}
+                <svg
+                onClick={svg2}
+                className="svgHome"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+                style={{
+                  height: "40px",
+                  visibility: End >= PlanLen ? "hidden" : "visible",
+                }}
+                >
+                <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
+                </svg>
                 </div>
-              );
-            })}
-          <svg
-            onClick={svg2}
-            className="svgHome"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 448 512"
-            style={{
-                height: "40px",
-                visibility: End >= PlanLen ? "hidden" : "visible",
-              }}
-          >
-            <path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z" />
-          </svg>
-        </div> 
-        <button className="btnNav">Click</button>
+            </div> : <div className="d-flex justify-content-center align-items-center" style={{height:"33vh"}}><div><Loader /></div></div>}
+          <div className=" d-flex justify-content-center">      
+            <button onClick={()=>navigate("/allplans")} className="read btnNav">Click</button>
+          </div>
+
       </div>
     </div>
   );

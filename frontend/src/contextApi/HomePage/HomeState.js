@@ -26,7 +26,7 @@ const HomeState = (props)=>{
     const [BlogLen,setblogLen] = useState(0);
 
     const fetchBlogs = async()=>{
-       const url = "http://localhost:5000/api/Plans/fetchplans"
+       const url = "http://localhost:5000/api/Blogs/fetchblogs"
        let response = await fetch(url,
         {
           method: "GET",
@@ -46,7 +46,7 @@ const HomeState = (props)=>{
     const [ProductLen,setproductLen] = useState(0);
 
     const fetchProducts = async()=>{
-       const url = "http://localhost:5000/api/Plans/fetchplans"
+       const url = "http://localhost:5000/api/Products/fetchproducts"
        let response = await fetch(url,
         {
           method: "GET",
