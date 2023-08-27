@@ -26,12 +26,12 @@ function AllPlans() {
         
        <div className="container boxPage2">
           <h2 className="text-center my-4">All Plans</h2>
-          {!loading? <div className="d-flex justify-content-between">
+          {!loading? <div className=" d-flex justify-content-center">
           <div className="row boxCardP2">
             {Plans&&
               Plans.map((Plan, index) => {
                 return (
-                    <div className="col-sm-4 my-5"  key={index}>
+                    <div className="col-sm-4 my-2"  key={index}>
                     
                     <AllPlansCards Plan={Plan} />
                     </div>

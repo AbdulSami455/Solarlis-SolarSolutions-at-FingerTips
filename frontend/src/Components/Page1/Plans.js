@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
+import {useNavigate} from "react-router-dom"
 import HomeContext from "../../contextApi/HomePage/HomeContext";
 import PlansCards from "./PlansCards";
 import Loader from "../Loader";
 
 function Plans() {
+  let navigate = useNavigate()
   let context = useContext(HomeContext);
   const { Plans, fetchPlans, PlanLen } = context;
   
@@ -83,7 +85,7 @@ function Plans() {
                 </div>
             </div> : <div className="d-flex justify-content-center align-items-center" style={{height:"33vh"}}><div><Loader /></div></div>}
           <div className=" d-flex justify-content-center">      
-            <button className="read btnNav">Click</button>
+            <button onClick={()=>navigate("/allplans")} className="read btnNav">Click</button>
           </div>
 
       </div>

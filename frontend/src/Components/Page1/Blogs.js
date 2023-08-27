@@ -84,7 +84,9 @@ function Blogs() {
             </svg>
             </div> : <div className="d-flex justify-content-center align-items-center" style={{height:"33vh"}}><div><Loader /></div></div>}
           
-        <button className="read btnNav">Click</button>
+            <div className=" d-flex justify-content-center">      
+            <button className="read btnNav">Click</button>
+          </div>
       </div>
     </div>
   );

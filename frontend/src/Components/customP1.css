@@ -116,6 +116,14 @@
     
   }
 
+  .btnCardP2 p{
+    color: white;
+    font-size: .9rem;
+    font-weight: 510;
+    
+  }
+
   .btnCardP2:hover{
     box-shadow: 0px 0px 12px 5px #ffff00;
+    border-radius: 20px;
   }
