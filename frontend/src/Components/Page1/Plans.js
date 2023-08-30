@@ -7,11 +7,12 @@ import Loader from "../Loader";
 function Plans() {
   let navigate = useNavigate()
   let context = useContext(HomeContext);
-  const { Plans, fetchPlans, PlanLen } = context;
+  const { Plans, fetchPlans, PlanLen, loading, setLoad } = context;
   
   const [start, setStart] = useState(0);
   const [End, setEnd] = useState(3);
-  const [loading, setloading] = useState(false)
+  const [loadingLocal, setLoadingLocal] = useState(false)
+
 
   useEffect(() => {
     fetchPlans();
@@ -20,8 +21,8 @@ function Plans() {
    console.log(PlanLen);
 
    useEffect(() => {
-    setTimeout(() => setloading(false),700)
-   }, [loading])
+    setTimeout(() => setLoadingLocal(false),700)
+   }, [loadingLocal])
    
   
 
@@ -30,7 +31,7 @@ function Plans() {
     setStart(subStart);
     let subEnd = End - 3;
     setEnd(subEnd);
-    setloading(true);
+    setLoadingLocal(true);
   };
 
   const svg2 = () => {
@@ -38,15 +39,23 @@ function Plans() {
     setStart(sumStart);
     let sumEnd = End + 3;
     setEnd(sumEnd);
-    setloading(true);
+    setLoadingLocal(true);
   };
+
+  const handleClick=()=>{
+    setLoad(true);
+    setTimeout(()=>{
+      setLoad(false);
+      navigate("/allplans");
+    },2000);
+  }
 
   return (
     <div>
       
      <div className="container boxPage1">
         <h2 className="text-center my-4">Plans</h2>
-        {!loading? <div className="d-flex justify-content-around">
+        {!loadingLocal? <div className="d-flex justify-content-around">
         <div className="row boxCardP1">
          <svg
             onClick={svg1}
@@ -85,7 +94,7 @@ function Plans() {
                 </div>
             </div> : <div className="d-flex justify-content-center align-items-center" style={{height:"33vh"}}><div><Loader /></div></div>}
           <div className=" d-flex justify-content-center">      
-            <button onClick={()=>navigate("/allplans")} className="read btnNav">Click</button>
+            <button onClick={handleClick} className="read btnNav">Click</button>
           </div>
 
       </div>

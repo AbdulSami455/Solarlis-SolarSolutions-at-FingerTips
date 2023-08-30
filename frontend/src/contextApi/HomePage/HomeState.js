@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import HomeContext from "./HomeContext";
 
 const HomeState = (props)=>{
+
+    const [loading,setLoad]=useState(true);
     const [Plans,setPlans] =useState();
     const [PlanLen,setplanLen] = useState(0);
 
@@ -63,7 +65,7 @@ const HomeState = (props)=>{
     }
 
     return(
-      <HomeContext.Provider value={{Plans,fetchPlans,PlanLen,Blogs,fetchBlogs,BlogLen,Products,fetchProducts,ProductLen}}>
+      <HomeContext.Provider value={{Plans,fetchPlans,PlanLen,Blogs,fetchBlogs,BlogLen,Products,fetchProducts,ProductLen,loading,setLoad}}>
         {props.children}
       </HomeContext.Provider>  
     )

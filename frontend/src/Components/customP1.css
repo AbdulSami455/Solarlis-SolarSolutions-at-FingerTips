@@ -96,15 +96,16 @@
   .btnCardP2{
     all: initial;
   }
+  
+    .btnCardP2{
+      background-color:  rgb(59, 60, 54);
+      border-radius: 50px;
+    }
 
   .boxCardP2{
     background:  rgb(59, 60, 54) ;
     margin-top: 3rem;
     margin-bottom: 3rem;
-  }
-
-  .btnCardP2{
-    background-color:  rgb(59, 60, 54);
   }
 
 
